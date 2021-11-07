@@ -1,0 +1,20 @@
+version: '2'
+services:
+  homebridge:
+    image: localhost:5000/udpbroadcastrelay:v0.3-beta-1-g163488b
+    restart: unless-stopped
+    command: --id 1 --port 1900 --dev eth0 --dev eth1 --multicast 239.255.255.250
+    ports: 
+      - 1900
+    networks:
+      ipvlan2:
+        ipv4_address: 192.168.2.204
+      ipvlan3:
+        ipv4_address: 192.168.3.204
+networks:
+  ipvlan2:
+    external:
+      name: ipvlan2
+  ipvlan3:
+    external:
+      name: ipvlan3
