@@ -1,0 +1,3 @@
+[submodule "udpbroadcastrelay"]
+	path = udpbroadcastrelay
+	url = https://github.com/marjohn56/udpbroadcastrelay.git
